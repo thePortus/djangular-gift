@@ -1,12 +1,12 @@
 'use strict';
 
 (function() {
-    describe('password-strength directive', function () {
+    describe('password-strength directive', function() {
         beforeEach(module(ApplicationConfiguration.name));
 
         var scope, $elt;
 
-        beforeEach(inject(function($rootScope, _$compile_){
+        beforeEach(inject(function($rootScope, _$compile_) {
             scope = $rootScope.$new();
             _.extend(scope, {
                 myPassword: 'p@ssword'
@@ -18,7 +18,7 @@
             scope.$digest(); // call watchers
         }));
 
-        it('should be usable', function(){
+        it('should be usable', function() {
             expect($elt).toExist();
         });
 

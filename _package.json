@@ -1,8 +1,8 @@
 {
-  "name": "<%= slugifiedAppName %>",
+  "name": "usf-gift",
   "private": true,
   "description": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "",
   "engines": {
     "node": "^2.5.x",

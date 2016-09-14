@@ -1,12 +1,9 @@
 from rest_framework import serializers
 from voluptuous import Schema, MultipleInvalid, Invalid
 
+
 class SchemaValidator:
-    """
-    see also:
-      - https://github.com/alecthomas/voluptuous
-      - http://www.django-rest-framework.org/api-guide/validators/#writing-custom-validators
-    """
+
     def __init__(self, *args, **kwargs):
         self._schema = Schema(*args, **kwargs)
 

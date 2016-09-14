@@ -7,12 +7,12 @@
  */
 
 (function() {
-    describe('feature-item directive', function () {
+    describe('feature-item directive', function() {
         beforeEach(module(ApplicationConfiguration.name));
 
         var scope, $elt, $httpBackend;
 
-        beforeEach(inject(function($rootScope, _$compile_, _$httpBackend_){
+        beforeEach(inject(function($rootScope, _$compile_, _$httpBackend_) {
             scope = $rootScope.$new();
             $httpBackend = _$httpBackend_;
             _.extend(scope, {
@@ -27,11 +27,11 @@
             scope.$digest(); // call watchers
         }));
 
-        it('should be usable', function(){
+        it('should be usable', function() {
             expect($elt).toExist();
         });
 
-        it('should contain an image', function(){
+        it('should contain an image', function() {
             expect($elt).toContainElement('img.img-responsive'); // see https://github.com/velesin/jasmine-jquery
         });
     });

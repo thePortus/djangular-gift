@@ -3,11 +3,17 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Michael J. Decker -- Project Director -- mjdecker@usf.edu
+    David J. Thomas -- Developer -- davidjthomas@usf.edu
+    Howard Kaplan -- Developer -- hkaplan@usf.edu
+    Herbert Maschner -- Project Partner -- maschner@usf.edu
+    Diane Wallman -- Project Parter -- dianewallman@usf.edu
+    George Philippidis -- Project Partner -- gphilippidis@usf.edu
+    Qiong Zhang -- Project Partner -- qiongzhang@usf.edu
 
 # THANKS
 
-    <name>
+    Generous funding provided by the Patel Center for Global Sustainability
 
 # TECHNOLOGY COLOPHON
 

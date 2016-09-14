@@ -10,6 +10,7 @@ FAKE_ASSETS = {'staticUrl': '/static/',
                'css': [],
                'js': ['public/config.js']}
 
+
 @override_settings(ASSETS=FAKE_ASSETS)
 class TestAssetsTemlatetag(TestCase):
     def setUp(self):
@@ -24,8 +25,10 @@ class TestAssetsTemlatetag(TestCase):
             {% load_assets js %}
         """
         out = (
-            '<script type="text/javascript" src="/static/_/angular/angular.js"></script>\n'
-            '<script type="text/javascript" src="/static/config.js"></script>'
+            '<script type="text/javascript" '
+            'src="/static/_/angular/angular.js"></script>\n'
+            '<script type="text/javascript" '
+            'src="/static/config.js"></script>'
         )
         self.assertEqual(self._render(template), out)
 

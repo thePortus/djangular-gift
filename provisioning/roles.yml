@@ -2,20 +2,22 @@
 - hosts: all
   roles:
     - role: common
-      sudo: true
+      become: yes
 
 - hosts: web_app
   roles:
     - role: dev-tools
+      become: yes
     - role: web-app-conf
+      become: yes
 
 - hosts: redis
   roles:
     - role: angstwad.docker_ubuntu
-      sudo: true
+      become: yes
   tasks:
     - name: redis container
-      sudo: true
+      become: yes
       docker:
         name: redis-service
         image: redis:3

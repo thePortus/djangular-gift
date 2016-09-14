@@ -8,8 +8,12 @@ from .dev import *
 INSTALLED_APPS += ('django_nose',)
 
 DATABASES = {
-    'default': {'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'test_db.sqlite3')}
+    'default': {'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'NAME': 'usf_gift_dev',
+                'USER': 'vagrant',
+                'PASSWORD': 'vagrant',
+                'HOST': 'localhost',
+                'PORT': ''}
 }
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

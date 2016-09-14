@@ -1,16 +1,16 @@
+(function() {
+
 'use strict';
 
-angular.module('core').controller('HeaderController',
-    function($scope, $auth, $state) {
+angular.module('core').controller('HeaderController', headerController);
 
-        angular.extend($scope, {
-            $auth: $auth,
-            $state: $state
-        });
+function headerController($scope, $auth, $state) {
+    /* jshint validthis: true */
+    var vm = this;
 
-		// Collapsing the menu after navigation
-		//$scope.$on('$stateChangeSuccess', function() {
-		//	$scope.isCollapsed = false;
-		//});
-	}
-);
+    vm.auth = $auth;
+    vm.state = $state;
+
+}
+
+})();
