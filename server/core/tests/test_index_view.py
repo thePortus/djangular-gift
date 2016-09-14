@@ -15,5 +15,7 @@ class TestIndexView(TestCase):
                              user=User.objects.get(username='johndoe'),
                              expected_status=200)
         self.assertIsNotNone(resp.content)
-        self.assertMatchSchema(dict(resp.context['user']), {'username': 'johndoe',
-                                                            'email': 'john.doe@foo.bar'})
+        self.assertMatchSchema(
+            dict(resp.context['user']),
+            {'username': 'johndoe', 'email': 'john.doe@foo.bar'}
+        )

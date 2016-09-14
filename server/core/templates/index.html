@@ -41,7 +41,7 @@
 	<body ng-cloak class="ng-cloak">
 
 		<div ng-include="'{% static 'core/views/core.header.view.html' %}'" ></div>
-		<section ui-view></section>
+		<md-content ui-view></md-content>
 
 		{% if debug %}
 			{% load_assets js %}

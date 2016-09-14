@@ -1,3 +1,7 @@
-'use strict';
+(function() {
 
-ApplicationConfiguration.registerModule('auth');
+    'use strict';
+
+    ApplicationConfiguration.registerModule('auth');
+
+})();

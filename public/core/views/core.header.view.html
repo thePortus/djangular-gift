@@ -1,25 +1,30 @@
-<header ng-controller="HeaderController" class="header-view">
-    <flash ></flash>
-    <div class="container" ng-switch="$auth.isUserLoggedIn()">
-        <div class="navbar-header col-xs-6 col-sm-7 col-md-8 col-lg-8 no-padding">
-            <ul class="nav navbar-nav">
-                <a class="navbar-brand"
-                   ui-sref="home" translate="PROJECT_NAME"></a>
-          </ul>
+<!DOCTYPE html>
+<header ng-controller="HeaderController as vm" class="header-view">
+    <!-- directive to display flash messages -->
+    <flash></flash>
+    <md-toolbar>
+        <div class="md-toolbar-tools" ng-switch="vm.auth.isUserLoggedIn()" layout="row">
+            <!-- project title -->
+            <div flex="100%">
+                <a class="md-title title-font" ui-sref="home" translate="PROJECT_NAME"></a>
+            <!-- /project title -->
+            </div>
+            <!-- if signed in -->
+            <ul ng-switch-when="true">
+                <li><span ng-bind="vm.auth.user.username"></span></li>
+                <li>
+                    <a href="/logout/">
+                        <i class="glyphicon glyphicon-log-out" title="{{'SIGN_OUT_ACTION'|translate}}"></i>
+                    </a>
+                </li>
+            <!-- /if signed in -->
+            </ul>
+            <!-- if not signed in -->
+            <div ng-switch-when="false">
+                <md-button class="md-raised" ng-if="!vm.state.is('signin')" ui-sref="signin" translate="SIGN_IN_ACTION" aria-label="{{'SIGN_IN_ACTION'|translate}}"></md-button>
+                <md-button class="md-raised" ng-if="!vm.state.is('signup')" ui-sref="signup" translate="SIGN_UP_ACTION" aria-label="{{'SIGN_UP_ACTION'|translate}}"></md-button>
+            <!-- /if not signed in -->
+            </div>
         </div>
-        <ul class="nav navbar-nav navbar-right" ng-switch-when="true">
-            <li><span ng-bind="$auth.user.username" ></span></li>
-            <li>
-                <a href="/logout/">
-                    <i class="glyphicon glyphicon-log-out"
-                       title="{{'SIGN_OUT_ACTION'|translate}}"></i>
-                </a>
-            </li>
-
-        </ul>
-        <div class="nav navbar-nav navbar-right" ng-switch-when="false">
-            <button ng-if="!$state.is('signin')" ui-sref="signin" class="btn btn-default navbar-btn" translate="SIGN_IN_ACTION"></button>
-            <button ng-if="!$state.is('signup')"  ui-sref='signup' class="btn btn-primary navbar-btn" translate="SIGN_UP_ACTION"></button>
-        </div>
-    </div>
+    </md-toolbar>
 </header>

@@ -1,6 +1,11 @@
-'use strict';
+(function() {
 
-angular.module('core').filter('passwordStrength',
-	function(passwordStrength) {
-		return passwordStrength; // see services
-	});
+    'use strict';
+
+    angular.module('core').filter('passwordStrength', passwordStrengthFilter);
+
+    function passwordStrengthFilter(passwordStrength) {
+        return passwordStrength; // see services
+    }
+
+})();
