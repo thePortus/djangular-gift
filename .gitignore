@@ -28,11 +28,10 @@ tmp/
 *.log.*
 .coverage
 
-public/*[!_]*/i18n/*.js
+public/i18n/*.js
 
 server/settings/*.yml  # used to store sensitive information
 
 # used during dev (same as _<fileName> but with interpolations)
-package.json
-bower.json
-Vagrantfile
+# package.json
+# bower.json

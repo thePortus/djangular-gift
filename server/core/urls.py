@@ -2,7 +2,7 @@
 """
 Use `urlpatterns` to list both both APIViews and viewsets for this module.
 
-NOTE: generator-djangularjs may automatically modified this file. To stay out of trouble please keep the **syntax** below
+NOTE: generator-djangular-gift may automatically modify this file. To stay out of trouble please keep the **syntax** below
 """
 
 from django.conf.urls import url

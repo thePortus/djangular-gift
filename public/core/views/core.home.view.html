@@ -1,29 +1,34 @@
-<section>
-    <div class="jumbotron">
+<!DOCTYPE html>
+<section layout="column">
+    <!-- app description -->
+    <div layout-padding>
         <div class="container text-center">
-            <h2 translate="PROJECT_NAME"></h2>
+            <h2 class="title-font" translate="PROJECT_NAME"></h2>
             <p ng-bind-html="'PROJECT_DESCRIPTION' | translate | safe"></p>
-            <a class="btn btn-primary"
-               href="https://github.com/nicolaspanel/djangularjs" target="_blank"
-               translate="MORE_ACTION" ></a>
+            <md-button class="md-raised" href="https://github.com/thePortus/generator-djangular-gift/" target="_blank" translate="MORE_GIFT" aria-label="{{'MORE_GIFT'|translate}}"></md-button>
+            <md-button class="md-raised" href="https://github.com/nicolaspanel/djangularjs" target="_blank" translate="MORE_DJANGULARJS" aria-label="{{'MORE_DJANGULARJS'|translate}}"></md-button>
         </div>
-	</div>
-    <div class="marketing">
-        <div class="container">
-            <div class="row " ng-init="categories=(featuresCatalogue | pluck:'category' | uniq)">
-                <div class="col-md-6 col-lg-4" ng-repeat="category in ::categories">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"
-                             translate="CATEGORY_TEXT"
-                             translate-values="{CATEGORY: category}"></div>
-                        <ul class="list-group">
-                            <feature-item ng-repeat="item in ::featuresCatalogue | filter:{category: category}"
-                                          feature="item"></feature-item>
-                        </ul>
-                    </div>
+        <!-- /app description -->
+    </div>
+    <!-- features -->
+    <div>
+        <div ng-init="categories=(vm.features | pluck:'category' | uniq)" layout="row">
+            <div ng-repeat="category in categories" layout-padding>
+                <div class="md-whiteframe-1dp">
+                    <md-toolbar class="md-toolbar-tools md-hue-3" ng-bind="category"></md-toolbar>
+                    <md-list md-cols="8" md-gutter="8px" md-row-height="2:1">
+                        <md-list-item ng-repeat="item in vm.features | filter:{category: category}" md-colspan="{{item.colspan}}" md-rowspan="{{item.rowspan}}" md-colspan-sm="1" md-colspan-xs="1">
+                            <img ng-if="item.img" class="md-avatar" ng-src="{{ item.img | staticPath }}">
+                            <md-list-item-text>
+                                <a ng-href="{{ item.link }}" target="_blank">
+                                    <h4 class="title-font" ng-bind="item.name"></h4>
+                                </a>
+                                <p ng-bind-html="item.descriptionKey | translate | safe"></p>
+                            </md-list-item-text>
+                        </md-list-item>
+                    </md-list>
                 </div>
             </div>
         </div>
     </div>
-
 </section>

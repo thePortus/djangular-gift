@@ -1,25 +1,33 @@
+(function() {
+    
 'use strict';
 /**
  * Signup controller
  *
  * Associated view: public/`auth/views/auth.signup.view.html`
  */
-angular.module('auth').controller('SignupController',
-	function($scope, $auth, $state, $flash, $translate, $http) {
+angular.module('auth').controller('SignupController', signupController);
 
-        this.signup = function (credentials) {
-            if ($scope.signupForm && $scope.signupForm.$invalid){
+    function signupController($scope, $auth, $state, $flash, $translate, $http) {
+        /* jshint validthis: true */
+        var vm = this;
+        vm.signup = signUp;
+
+        function signUp(credentials) {
+            if ($scope.signupForm && $scope.signupForm.$invalid) {
                 $scope.signupForm.$showErrors = true;
-                return;
-            }
+                return;}
+
             $http.post('/signup/', credentials)
-                .success(function (response) {
+                .success(function(response) {
                     $auth.setLoggedUser(response);
                     $state.go('home');
                 })
-                .error(function () {
+                .error(function() {
                     $flash.error($translate.instant('SIGN_UP.BAD_CREDENTIALS'));
                     $scope.credentials = {};
                 });
-        };
-	});
+        }
+    }
+
+})();

@@ -22,6 +22,9 @@ space_after_control_statements = true
 space_after_anonymous_functions = false
 spaces_in_brackets = false
 
+indent_size = 4
+insert_final_newline = true
+
 # No Standard.  Please document a standard if different from .js
 [**.yml, **.html, **.css]
 trim_trailing_whitespace = true

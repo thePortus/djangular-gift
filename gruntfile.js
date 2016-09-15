@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         watch: {
             server: {
-                files: ['assets.json'],  // changes to assets.json require to restart server
+                files: ['assets.json'], // changes to assets.json require to restart server
                 tasks: ['django-manage:run-dev'],
                 options: {
                     spawn: false,
@@ -62,12 +62,22 @@ module.exports = function(grunt) {
             }
         },
         translate: {
-            all: {}
+            all: {
+                src: [
+                    'public/*[!_]*/*.js',
+                    'public/*[!_]*/*[!tests]*/*.js',
+                    'public/*[!_]*/*[!tests]*/*.html'
+                ],
+                lang: ['en'],
+                dest: 'i18n'
+            }
         },
-        ngtemplates:  {
-            app:        {
+        ngtemplates: {
+            app: {
                 cwd: 'public',
-                src: assets.html.map(function(file){return file.replace(new RegExp('^public/'), '');}),
+                src: assets.html.map(function(file) {
+                    return file.replace(new RegExp('^public/'), '');
+                }),
                 dest: 'dist/templates.js',
                 options: {
                     prefix: assets.staticUrl
@@ -93,7 +103,7 @@ module.exports = function(grunt) {
             app: {
                 files: {
                     'dist/app.min.js': 'dist/app.js',
-                    'dist/app-with-templates.min.js' :['dist/app.js', '<%= ngtemplates.app.dest %>']
+                    'dist/app-with-templates.min.js': ['dist/app.js', '<%= ngtemplates.app.dest %>']
                 }
             }
         },
@@ -102,12 +112,12 @@ module.exports = function(grunt) {
                 map: true, // inline sourcemaps
                 processors: [
                     require('pixrem')(), // add fallbacks for rem units
-                    require('autoprefixer-core')({browsers: 'last 2 versions'}), // add vendor prefixes
+                    require('autoprefixer-core')({ browsers: 'last 2 versions' }), // add vendor prefixes
                     require('cssnano')() // minify the result
                 ]
             },
             dist: {
-              src: assets.css
+                src: assets.css
             }
         },
         cssmin: {
@@ -152,7 +162,7 @@ module.exports = function(grunt) {
             },
             unit: {
                 options: {
-                    files:  assets.lib.js
+                    files: assets.lib.js
                         .concat(assets.js)
                         .concat(assets.tests)
                         .concat(['public/*[!_]*/*[!tests]*/*.html'])
@@ -164,7 +174,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        'django-manage':{
+        'django-manage': {
             options: {
                 app: 'server',
                 verbose: true
@@ -178,7 +188,7 @@ module.exports = function(grunt) {
             'run-prod': {
                 options: {
                     command: 'runserver',
-                    args: ['0.0.0.0:3000',  '--settings=server.settings.prod', '--insecure']
+                    args: ['0.0.0.0:3000', '--settings=server.settings.prod', '--insecure']
                 }
             },
             test: {

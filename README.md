@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # USF-GIFT
 Global Interdisciplinary Food Technologies (GIFT) Knowledge Repository
 [University of South Florida](http://www.usf.edu/)
@@ -68,6 +69,127 @@ First, we need to configure the generator and automated provisioning
 @host $ sudo npm install -g generator-djangular-gift
 # *Optional* Tool to manage VM with icon in system tray
 # $ brew cask install vagrant-bar
+=======
+__DjangularJS__ is a full-stack framework based on [Django](https://www.djangoproject.com/) and [AngularJS](https://angularjs.org/) focused on programmer happiness and sustainable productivity. 
+
+It aims to solve the common issues with connecting those frameworks, support daily development needs and help developers to use best practices.
+
+
+__Design goals__:
+ - [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
+ - [Convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration)
+ - Modularity
+ - Automation (as much as possible!)
+ 
+ 
+
+# Getting started
+
+## Project structure
+
+__DjangularJS__ comes with guidelines on how to organize your project. For example:
+ - __Django__ (ie Back-end) stuffs are located in `<project-name>/server` folder 
+ - __Angular__ (ie Front-end) stuffs are located in `<project-name>/public` folder
+ - __Ansible__ (ie provisioning) stuffs are located in `<project-name>/provisioning` folder
+
+The global structure is described below:
+
+```
+. (project root)
++-- provisioning/                 Ansible configuration (optional but recommended)
+|
++-- public/                       AngularJS app (front-end)
+|  +-- _/                         contains bower packages (see .bowerrc)
+|  +-- core/                      main module (mandatory)
+|  +-- i18n/                      contains translations for each language (optional)
+|  +-- angular-module0/
+|  |  +-- constants/              contains angular constants for module0 (optional)
+|  |  +-- controllers/            contains angular controllers for module0 (optional)
+|  |  +-- directives/             contains angular directives for module0 (optional)
+|  |  +-- filters/                contains angular filters for module0 (optional)
+|  |  +-- img/                    contains images used in module0 (optional)
+|  |  +-- modals/                 contains modal views used in module0 (optional)
+|  |  +-- services/               contains angular services for module0 (optional)
+|  |  +-- styles/                 contains Sass' partials for both views and templates (optional)
+|  |  +-- templates/              contains templates (ie partial views) for both directives and modals (optional)
+|  |  +-- tests/                  contains module0's tests (optional but recommended)
+|  |  |  +-- *.spec.js            unit test (karma + jasmine) (optional)
+|  |  |  +-- *.e2e.js             protractor test (karma + jasmine) (optional)
+|  |  |  +-- module0.fake-data.js special file use to provide data on for your unit tests (optional)
+|  |  +-- views/                  contains views for module0 (optional)
+|  |  +-- module0.module.js       configuration file for module0 (mandatory)
+|  +-- ...
+|  +-- config.js                  global configuration file for the AngularJS app (mandatory)
+|  +-- config.scss                global configuration file and entry point for Sass (mandatory)
+|
++-- requirements/                 python dependencies for both development and production (mandatory)
+|
++-- server/                       Django project (back-end) (mandatory)
+|  +-- core/                      main module (mandatory)
+|  +-- django-module0
+|  |  +-- fixtures/               contains initial/test data for module0 (optional)
+|  |  +-- serializers/            contains module0's serialiazers (python module) (optional)
+|  |  +-- templates/              contains module0's templates (optional)
+|  |  +-- templatetags/           contains templatetags used in module0 (optional)
+|  |  +-- tests/                  contains module0's tests (should match test_*.py) (optional but recommended)
+|  |  +-- views/                  contains both APIViews and Viewsets (optional)
+|  |  +-- urls.py                 lists module0's routes (optional)
+|  +-- ...
+|  +-- settings/                  special folder containing Django settings (mandatory)
+|  +-- urls.py                    lists modules and third party routes (mandatory)
+|
++-- package.json                  npm (ie NodeJS) dependencies (mandatory)
++-- bower.json                    front-end (ie bower) dependencies (mandatory)
++-- assets.json                   special file used to locate front-end dependencies (mandatory)
++-- gruntfile.js                  configuration file for Grunt (mandatory)
++-- Vagrantfile                   configuration file for Vagrant (optional but recommended)
+```
+
+## Conventions
+
+ - __Instructions are to be run from the root directory of your project__
+ 
+ - Instructions like `@host $ ...` should be executed from the host (ie. from your computer) 
+ 
+ - Instructions like `@dev0 $ ...` should be executed from `dev0` (ie. inside vagrant, in the vm hosting your web app)
+ 
+   Use `@host $ vagrant ssh dev0` to connect to `dev0`
+   
+   Development machines are listed in `provisioning/vagrant.yml` 
+   
+ - Instructions like `(vagrant)@dev0 $ ...` expect `virtualenv` to be activated.
+  
+   Use `@dev0 $ cd /vagrant && source bin/activate` to enable `virtualenv`
+
+ 
+## Prerequisites & Dependencies
+
+Make sure you have installed all of the following prerequisites on your __development__ machine:
+
+ - __[Vagrant](http://docs.vagrantup.com/v2/installation/)__ - easy way to create and configure lightweight, reproducible, and portable development environments.
+ 
+ - __[Ansible](http://docs.ansible.com/ansible/intro_installation.html)__ - tool to manage your servers
+ 
+ - __[io.js](https://iojs.org/en/index.html)__ or __[node.js](https://nodejs.org/)__ (see also [nvm](https://github.com/creationix/nvm))
+ 
+ - __[bower](http://bower.io/)__ - front-end dependencies manager
+  
+   `@host $ npm install -g bower`
+   
+ - __[grunt](http://gruntjs.com/)__, __[yeoman](http://yeoman.io/)__ and __[generator-djangularjs](https://github.com/nicolaspanel/generator-djangularjs)__ - automation tools
+ 
+   `@host $ npm install -g grunt-cli yo generator-djangularjs`
+
+
+__NOTE__: Even if __Vagrant__ and __Ansible__ are recommended, you can use __DjangularJS__ without them (it assumes you know what you are doing).
+
+
+## Project Setup
+
+```sh
+@host $ mkdir <project_name> && cd <project_name>
+@host $ yo djangularjs
+>>>>>>> master
 ```
 
 Let's generate the bare app scaffold files
@@ -91,9 +213,16 @@ After the machine is started the first time, Ansible will run and ask you for th
 
 ## Setting Up the VM
 
+<<<<<<< HEAD
 Now that the machine is operating, time to connect and configure. The next commands will connect you and take you to the folder inside the VM that is synced with the the project directory on your host machine.
 ``` bash
 # Connect to the VM from your host machine through ssh as user dev0
+=======
+```sh
+# 1. Setup your development environment  
+@host $ sudo ansible-galaxy install -r provisioning/requirements.yml
+@host $ vagrant up # take a while
+>>>>>>> master
 @host $ vagrant ssh dev0
 # Change to the /vagrant directory (which is the synced repo folder)
 @dev0 $ cd /vagrant
@@ -226,7 +355,11 @@ His excellent work I have only modified in small part in order to conform with [
 ## License
 The MIT License (MIT)
 
+<<<<<<< HEAD
 Copyright (c) 2016 David J. Thomas, thePortus.com
+=======
+Copyright (c) 2015-2016 Nicolas Panel
+>>>>>>> master
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

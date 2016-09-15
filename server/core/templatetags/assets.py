@@ -18,15 +18,23 @@ def find_files(patterns):
 class CssAssetsRenderer(template.Node):
 
     def render(self, context):
-        return '\n'.join(['<link rel="stylesheet" href="{0}">'.format(f)
-                         for f in find_files(settings.ASSETS['lib']['css'] + settings.ASSETS['css'])])
+        return '\n'.join([
+            '<link rel="stylesheet" href="{0}">'.format(f)
+            for f in find_files(
+                settings.ASSETS['lib']['css'] + settings.ASSETS['css']
+            )
+        ])
 
 
 class JsAssetsRenderer(template.Node):
 
     def render(self, context):
-        return '\n'.join(['<script type="text/javascript" src="{0}"></script>'.format(f)
-                         for f in find_files(settings.ASSETS['lib']['js'] + settings.ASSETS['js'])])
+        return '\n'.join([
+            '<script type="text/javascript" src="{0}"></script>'.format(f)
+            for f in find_files(
+                settings.ASSETS['lib']['js'] + settings.ASSETS['js']
+            )
+        ])
 
 
 @register.tag
