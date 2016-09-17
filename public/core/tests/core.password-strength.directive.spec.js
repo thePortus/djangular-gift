@@ -18,9 +18,5 @@
             scope.$digest(); // call watchers
         }));
 
-        it('should be usable', function() {
-            expect($elt).toExist();
-        });
-
     });
 })();

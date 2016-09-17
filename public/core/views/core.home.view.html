@@ -16,16 +16,8 @@
             <div ng-repeat="category in categories" layout-padding>
                 <div class="md-whiteframe-1dp">
                     <md-toolbar class="md-toolbar-tools md-hue-3" ng-bind="category"></md-toolbar>
-                    <md-list md-cols="8" md-gutter="8px" md-row-height="2:1">
-                        <md-list-item ng-repeat="item in vm.features | filter:{category: category}" md-colspan="{{item.colspan}}" md-rowspan="{{item.rowspan}}" md-colspan-sm="1" md-colspan-xs="1">
-                            <img ng-if="item.img" class="md-avatar" ng-src="{{ item.img | staticPath }}">
-                            <md-list-item-text>
-                                <a ng-href="{{ item.link }}" target="_blank">
-                                    <h4 class="title-font" ng-bind="item.name"></h4>
-                                </a>
-                                <p ng-bind-html="item.descriptionKey | translate | safe"></p>
-                            </md-list-item-text>
-                        </md-list-item>
+                    <md-list  md-2-line dense flex>
+                        <feature-item ng-repeat="item in ::vm.features | filter:{category: category}" feature="item"></feature-item>
                     </md-list>
                 </div>
             </div>
