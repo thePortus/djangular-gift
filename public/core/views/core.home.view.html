@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<section layout="column">
+<section layout="column" layout-align="center center">
     <!-- app description -->
-    <div layout-padding>
-        <div class="container text-center">
-            <h2 class="title-font" translate="PROJECT_NAME"></h2>
-            <p ng-bind-html="'PROJECT_DESCRIPTION' | translate | safe"></p>
-            <md-button class="md-raised" href="https://github.com/thePortus/generator-djangular-gift/" target="_blank" translate="MORE_GIFT" aria-label="{{'MORE_GIFT'|translate}}"></md-button>
-            <md-button class="md-raised" href="https://github.com/nicolaspanel/djangularjs" target="_blank" translate="MORE_DJANGULARJS" aria-label="{{'MORE_DJANGULARJS'|translate}}"></md-button>
-        </div>
+    <div class="text-center" layout-padding>
+        <h2 class="title-font" translate="PROJECT_NAME"></h2>
+        <p ng-bind-html="'PROJECT_DESCRIPTION' | translate | safe"></p>
+        <md-button class="md-raised" href="https://github.com/thePortus/generator-djangular-gift/" target="_blank" translate="MORE_GIFT" aria-label="{{'MORE_GIFT'|translate}}"></md-button>
+        <md-button class="md-raised" href="https://github.com/nicolaspanel/djangularjs" target="_blank" translate="MORE_DJANGULARJS" aria-label="{{'MORE_DJANGULARJS'|translate}}"></md-button>
         <!-- /app description -->
     </div>
-    <!-- features -->
+    <!-- hide/show features -->
     <div>
-        <div ng-init="categories=(vm.features | pluck:'category' | uniq)" layout="row">
-            <div ng-repeat="category in categories" layout-padding>
-                <div class="md-whiteframe-1dp">
-                    <md-toolbar class="md-toolbar-tools md-hue-3" ng-bind="category"></md-toolbar>
-                    <md-list md-cols="8" md-gutter="8px" md-row-height="2:1">
-                        <md-list-item ng-repeat="item in vm.features | filter:{category: category}" md-colspan="{{item.colspan}}" md-rowspan="{{item.rowspan}}" md-colspan-sm="1" md-colspan-xs="1">
-                            <img ng-if="item.img" class="md-avatar" ng-src="{{ item.img | staticPath }}">
-                            <md-list-item-text>
-                                <a ng-href="{{ item.link }}" target="_blank">
-                                    <h4 class="title-font" ng-bind="item.name"></h4>
-                                </a>
-                                <p ng-bind-html="item.descriptionKey | translate | safe"></p>
-                            </md-list-item-text>
-                        </md-list-item>
-                    </md-list>
-                </div>
+        <md-button class="md-icon-button md-raised md-accent md-hue-1" ng-click="vm.show_features=!vm.show_features" aria-label="Show/Hide Stack Features">
+            <i class="material-icons" ng-if="!vm.show_features">expand_more</i>
+            <i class="material-icons" ng-if="vm.show_features">expand_less</i>
+        </md-button>
+    <!-- /hide/show features -->
+    </div>
+    <!-- features -->
+    <div ng-if="vm.show_features" ng-init="categories=(vm.features | pluck:'category' | uniq)" layout="row">
+        <div ng-repeat="category in categories" layout-padding flex>
+            <div class="md-whiteframe-1dp">
+                <md-toolbar class="md-toolbar-tools md-hue-3 title-font" ng-bind="category"></md-toolbar>
+                <md-list md-2-line dense flex>
+                    <feature-item ng-repeat="item in ::vm.features | filter:{category: category}" feature="item"></feature-item>
+                </md-list>
             </div>
         </div>
     </div>
+    <!-- /features -->
 </section>

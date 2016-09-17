@@ -7,7 +7,7 @@
  */
 
 (function() {
-    describe('feature-item directive', function() {
+    describe('feature-item', function() {
         beforeEach(module(ApplicationConfiguration.name));
 
         var scope, $elt, $httpBackend;
@@ -22,7 +22,7 @@
                     descriptionKey: 'SOME_TRANSLATION_KEY'
                 }
             });
-            var element = angular.element('<feature-item feature="myFeature"></feature-item>');
+            var element = angular.element('<feature-item ng-repeat="item in ::vm.features | filter:{category: category}" feature="item"></feature-item>');
             $elt = _$compile_(element)(scope);
             scope.$digest(); // call watchers
         }));
@@ -31,8 +31,5 @@
             expect($elt).toExist();
         });
 
-        it('should contain an image', function() {
-            expect($elt).toContainElement('img.img-responsive'); // see https://github.com/velesin/jasmine-jquery
-        });
     });
 })();

@@ -52,7 +52,7 @@
     "PROJECT_NAME": "Djangular-GIFT",
     "MORE_GIFT": "USF-Gift",
     "MORE_DJANGULARJS": "DjangularJS",
-    "PROJECT_DESCRIPTION": "Full-stack framework optimized by and for the University of South Florida's GIFT project",
+    "PROJECT_DESCRIPTION": "Full-stack framework optimized by and for the <a href=\"http://www.usf.edu/\">University of South Florida's</a> GIFT project",
     "BOWER_DESCRIPTION": "A package manager for the web",
     "CATEGORY_TEXT": "{CATEGORY, select, front{Front-End} back{Back-End} automation{Automation} other{}}",
     "ANGULAR_DESCRIPTION": "Superheroic JavaScript MVW Framework",

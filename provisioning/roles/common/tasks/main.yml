@@ -10,13 +10,10 @@
     become: yes
     apt: pkg={{ item }} state=installed
     with_items:
-      - python-dev
       - python3-dev
       - build-essential
       - python-virtualenv
-      - python-pip
       - python3-pip
-      - python-software-properties
       - python3-software-properties
       - libffi-dev
       - libssl-dev

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<md-list-item class="core feature-item-template">
+    <img ng-if="vm.feature.img" class="md-avatar" ng-src="{{ vm.feature.img | staticPath }}" aria-label="{{ vm.feature.name }} Logo">
+    <md-list-item-text>
+        <a ng-href="{{ vm.feature.link }}" target="_blank">
+            <h4 class="title-font" ng-bind="vm.feature.name"></h4>
+        </a>
+        <p ng-bind-html="vm.feature.descriptionKey | translate | safe"></p>
+    </md-list-item-text>
+</md-list-item>

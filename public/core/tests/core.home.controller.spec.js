@@ -15,14 +15,5 @@
                 $scope: scope
             });
         }));
-
-        describe('scope', function() {
-            it('should expose $auth service', function() {
-                expect(scope.$auth).toBeDefined();
-            });
-            it('should expose features catalogue', function() {
-                expect(scope.featuresCatalogue).toBeDefined();
-            });
-        });
     });
 })();

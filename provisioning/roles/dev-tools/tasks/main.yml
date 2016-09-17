@@ -53,4 +53,8 @@
       - protractor
 
 - name: Setup virtualenv
-  pip: name=pip virtualenv={{ PROJECT_ROOT }} state=latest
+  pip:
+    name: pip
+    virtualenv: '{{ PROJECT_ROOT }}'
+    state: latest
+    virtualenv_python: python3
