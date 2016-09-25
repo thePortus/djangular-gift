@@ -8,7 +8,7 @@ var ApplicationConfiguration = (function() {
         dependencies: [
             'ngResource', 'ngAnimate', 'ngCookies', 'ngMessages',
             'ngSanitize', 'ui.router', 'ui.router.title',
-            'angular-loading-bar', 'ui.bootstrap', 'angularMoment',
+            'angular-loading-bar', 'angularMoment',
             'restangular', 'pascalprecht.translate', 'angular-toolbox',
             'ngAria', 'ngMaterial'
         ],
@@ -45,6 +45,7 @@ var ApplicationConfiguration = (function() {
 
     function translateProviderConfig($translateProvider) {
         // internationalization translation config
+        
         $translateProvider.fallbackLanguage('en');
         $translateProvider.useMessageFormatInterpolation();
         $translateProvider.useSanitizeValueStrategy('sanitize');
@@ -57,16 +58,18 @@ var ApplicationConfiguration = (function() {
 
         function unauthorizedInterceptor($q, $window) {
             return {
-                responseError: function(rejection) {
-                    switch (rejection.status) {
-                        case 401:
-                        case 403:
-                            $window.location.href = '/'; // Redirect to signin page
-                            break;
-                    }
-                    return $q.reject(rejection);
-                }
+                responseError: responseError
             };
+
+            function responseError(rejection) {
+                switch (rejection.status) {
+                    case 401:
+                    case 403:
+                        $window.location.href = '/'; // Redirect to signin page
+                        break;
+                }
+                return $q.reject(rejection);
+            }
         }
         // Set the httpProvider "not authorized" interceptor
         $httpProvider.interceptors.push(unauthorizedInterceptor);
@@ -80,7 +83,13 @@ var ApplicationConfiguration = (function() {
         // Material Design palette config
         $mdThemingProvider.theme('default')
             .primaryPalette('blue-grey')
-            .accentPalette('amber');
+            .backgroundPalette('grey')
+            .accentPalette('deep-orange');
+        $mdThemingProvider.theme('default-dark')
+            .primaryPalette('blue-grey')
+            .backgroundPalette('grey')
+            .accentPalette('deep-orange')
+            .dark();
     }
 
     // Bootstrap the app window and prepare

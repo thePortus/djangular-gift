@@ -1,76 +1,49 @@
 {
-    "SIGN_IN": {
-        "BAD_CREDENTIALS": "Invalid credentials",
-        "FIELDS": {
-            "USERNAME": {
-                "PLACEHOLDER": "your username or email...",
-                "LABEL": "Username or email",
-                "REQUIRED": "username or email required"
-            },
-            "PASSWORD": {
-                "PLACEHOLDER": "your password...",
-                "LABEL": "Password"
-            },
-            "PASSWORD_FORGOTTEN_ACTION": "(forgot password)"
-        },
-        "HEADING": "Welcome back",
-        "NO_ACCOUNT_QUESTION": "No account yet?"
-    },
-    "SIGN_UP": {
-        "BAD_CREDENTIALS": "Sorry but the username is already used",
-        "FIELDS": {
-            "EMAIL": {
-                "PLACEHOLDER": "your email...",
-                "INVALID": "This email is not valid",
-                "LABEL": "Email"
-            },
-            "USERNAME": {
-                "PLACEHOLDER": "your username...",
-                "LABEL": "Username",
-                "SLUGIFIED{:slug}": "Will be created as <b>{slug}</b>"
-            },
-            "PASSWORD": {
-                "PLACEHOLDER": "choose a password...",
-                "NOT_STRONG_ENOUGH": "This password is not strong enough",
-                "LABEL": "Passoword"
-            }
-        },
-        "HEADING": "Welcome on board",
-        "ALREADY_REGISTERED_QUESTION": "Already registered?"
-    },
-    "PASSWORD_FORGOTTEN": {
-        "DONE_WARN": "Since it is just an example you <b>won't receive any email</b>",
-        "EMAIL_PLACEHOLDER": "type in your email here...",
-        "TITLE": "Reset your password",
-        "DESCRIPTION": "Submit your email address and we’ll send you a link to reset your password.",
-        "SEND_ACTION": "Send"
-    },
-    "FIELD_REQUIRED": "This field is required",
-    "SIGN_IN_ACTION": "Login",
-    "SIGN_UP_ACTION": "Register",
-    "SIGN_OUT_ACTION": "Sign out",
+    "SIGN_OUT_ACTION": "Sign Out",
+    "SIGN_IN_ACTION": "Sign In",
     "PROJECT_NAME": "Djangular-GIFT",
-    "MORE_GIFT": "USF-Gift",
-    "MORE_DJANGULARJS": "DjangularJS",
-    "PROJECT_DESCRIPTION": "Full-stack framework optimized by and for the <a href=\"http://www.usf.edu/\">University of South Florida's</a> GIFT project",
-    "BOWER_DESCRIPTION": "A package manager for the web",
+    "PROJECT_SPONSORS": "The USF-GIFT project is possible thanks to generous funding provided by the <a href=\"http://www.usf.edu/pcgs/\">Patel Center for Global Sustainability</a>",
+    "PROJECT_CREDITS": "<ul>li>Michael J. Decker, Project Director</li><li>David J. Thomas, Developer</li><li>Howard Kaplan, Developer</li><li>Herbert Maschner, Project Partner</li><li>Diane Wallman, Project Parter</li><li>George Philippidis, Project Partner</li><li>Qiong Zhang, Project Partner</li></ul>",
+    "PROJECT_DESCRIPTION": "<a href=\"https://github.com/thePortus/generator-djangular-gift\">Full-stack framework</a> optimized by and for the <a href=\"http://www.usf.edu/\">University of South Florida's</a> GIFT project<br><br>By David J. Thomas, <a href=\"http://theportus.com\">thePortus.com</a><br><small>Based upon the <a href=\"https://github.com/nicolaspanel/generator-djangularjs\">DjangularJS Generator</a>, by <a href=\"https://github.com/nicolaspanel\">Nicolas Panel</a></small>",
+    "SHOW_FEATURES_ACTION": "Show Features",
+    "HIDE_FEATURES_ACTION": "Hide Features",
     "CATEGORY_TEXT": "{CATEGORY, select, front{Front-End} back{Back-End} automation{Automation} other{}}",
     "ANGULAR_DESCRIPTION": "Superheroic JavaScript MVW Framework",
+    "ANGULAR_ARIA_LABEL": "Visit the AngularJS Website",
     "ANGULAR_MATERIAL_DESCRIPTION": "Powerful Mobile-First Google UI Framework",
-    "BOOTSTRAP_DESCRIPTION": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
+    "ANGULAR_MATERIAL_ARIA_LABEL": "Visit the Angular Material Website",
     "ARIA_DESCRIPTION": "Angular support for ARIA (Accessibility Rich Internet Applications)",
+    "ARIA_ARIA_LABEL": "Visit the Angular Aria Website",
     "I18N_DESCRIPTION": "<b>angular-translate</b> makes your life much easier when it comes to i18n and l10n",
-    "ANGULAR_UI_DESCRIPTION": "The companion suite(s) to the AngularJS framework.",
+    "I18N_ARIA_LABEL": "Visit the Angular-Translate Website",
     "SASS_DESCRIPTION": "<b>Sass</b> is the most mature, stable, and powerful professional grade CSS extension language in the world.",
+    "SASS_ARIA_LABEL": "Visit the Sass Website",
     "MOMENT_DESCRIPTION": "Parse, validate, manipulate, and display dates in JavaScript.",
+    "MOMENT_ARIA_LABEL": "Visit the Moment.js Website",
+    "MATERIAL_DESIGN_ICONS_DESCRIPTION": "Material icons are beautifully crafted, delightful, and easy to use in your web, Android, and iOS projects.",
+    "MATERIAL_DESIGN_ICONS_ARIA_LABEL": "Visit the Material Design Icons Website.",
+    "TYPO_PRO_DESCRIPTION": "<b>TypoPRO</b>: Fonts for Professional Typography — The Non-Cloud Way!",
+    "TYPO_PRO_ARIA_LABEL": "Visit the TypoPRO Website",
     "DJANGO_DESCRIPTION": "The Web framework for perfectionists with deadlines",
+    "DJANGO__ARIA_LABEL": "Visit the Django Website",
     "DRF_DESCRIPTION": "<b>Django REST framework</b> is a powerful and flexible toolkit that makes it easy to build Web APIs.",
+    "DRF_ARIA_LABEL": "Visit the Django Rest Framework Website",
     "POSTGRES_DESCRIPTION": "The World's Most Advanced Open Source Database",
+    "POSTGRES_ARIA_LABEL": "Visit the PostgreSQL Website",
     "PANDAS_DESCRIPTION": "Pandas Python Data Analysis Toolkit for Django Rest Framework",
+    "PANDAS_ARIA_LABEL": "Visit the Pandas Website",
+    "OAUTH_DESCRIPTION": "3rd-Party Google OAuth implementation by <b>django-allauth</b>",
+    "OAUTH_ARIA_LABEL": "Visit the django-allauth website.",
     "GRUNT_DESCRIPTION": "The JavaScript Task Runner",
+    "GRUNTARIA_LABEL": "Visit the Grunt Website",
     "YO_DESCRIPTION": "The web's scaffolding tool for modern webapps",
+    "YO_ARIA_LABEL": "Visit the Yeoman Website",
     "KARMA_DESCRIPTION": "Spectacular Test Runner for Javascript",
+    "KARMA_ARIA_LABEL": "Visit the Karma Website",
     "PROTRACTOR_DESCRIPTION": "End-to-end test framework for AngularJS applications",
+    "PROTRACTOR_ARIA_LABEL": "Visit the Protractor Website",
     "VAGRANT_DESCRIPTION": "Development environments made easy.",
-    "ANSIBLE_DESCRIPTION": "<b>Ansible</b> is the simplest way to automate apps and IT infrastructure"
+    "VAGRANT_ARIA_LABEL": "Visit the Vagrant Website",
+    "ANSIBLE_DESCRIPTION": "<b>Ansible</b> is the simplest way to automate apps and IT infrastructure",
+    "ANSIBLE_ARIA_LABEL": "Visit the Ansible Website"
 }

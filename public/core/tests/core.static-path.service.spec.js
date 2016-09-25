@@ -1,19 +1,24 @@
-'use strict';
-
 (function() {
-    describe('staticPath Service Spec', function() {
-        // Initialize global variables
-        var staticPath;
+    
+    'use strict';
 
-        beforeEach(module(ApplicationConfiguration.name));
+    (function() {
+        describe('staticPath Service Spec', function() {
+            // Initialize global variables
+            var staticPath;
 
-        beforeEach(inject(function(_staticPath_) {
-            staticPath = _staticPath_;
-        }));
+            beforeEach(module(ApplicationConfiguration.name));
 
-        it('should be testable', inject(function() {
-            // The test logic
-            expect(staticPath).toBeDefined();
-        }));
-    });
-}());
+            beforeEach(inject(staticPathInject));
+
+            function staticPathInject(_staticPath_) {
+                staticPath = _staticPath_;
+                it('should be testable', inject(function() {
+                    // The test logic
+                    expect(staticPath).toBeDefined();
+                }));
+            }
+        });
+    }());
+
+})();

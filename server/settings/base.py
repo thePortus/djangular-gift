@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = (
-    'django_su',
+    # 'django_su',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,11 +41,28 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # DRF, Compressor, and DjangularJS core
     'rest_framework',
     'compressor',
     'server.core',
-    'server.authentication',
+
+    # allAuth required apps
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # Required for Google login
+    'allauth.socialaccount.providers.google',
+
+    # GIFT Apps
 )
+
+# Settings for Django Sites and allAuth
+SITE_ID = 1
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = "none"
+SOCIALACCOUNT_QUERY_EMAIL = True
+LOGIN_REDIRECT_URL = "/"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,8 +81,10 @@ AUTHENTICATION_BACKENDS = (
     # Standard Django auth
     "django.contrib.auth.backends.ModelBackend",
     # django-su auth
-    "django_su.backends.SuBackend",
-    "server.authentication.backends.EmailBackend",
+    # "django_su.backends.SuBackend",
+    # "server.authentication.backends.EmailBackend",
+    #  allauth methods
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 
@@ -104,6 +123,8 @@ TEMPLATES = [
                 "django.template.context_processors.media",
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
+                # Required for the allauth (Google/Facebook/Etc) templates 
+                "django.template.context_processors.request",
             ],
         },
     },

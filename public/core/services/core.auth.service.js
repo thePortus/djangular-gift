@@ -4,21 +4,26 @@
 
     // Authentication service for user variables
     angular.module('core')
-        .factory('$auth', function($rootScope, $q, $http) {
-            function Authentication() {}
+        .factory('Authentication', authenticationFactory);
 
-            Authentication.prototype.setLoggedUser = function setLoggedUser(user) {
-                if (user) {
-                    this.user = user;
-                    $rootScope.$emit('logged-in');
-                }
-            };
+    function authenticationFactory($rootScope, $q, $http) {
+        /* jshint validthis: true */
+        var vm = this;
 
-            Authentication.prototype.isUserLoggedIn = function() {
-                return !!this.user;
-            };
+        vm.setLoggedUser = setLoggedUser;
+        vm.checkuserLoggedIn = checkUserLoggedIn;
 
-            return new Authentication();
-        });
+        function setLoggedUser(user) {
+            if (user) {
+                vm.user = user;
+                vm.username = user.username;
+                $rootScope.$emit('logged-in');
+            }
+        }
+
+        function checkUserLoggedIn() {
+            return !!vm.user;
+        }
+    }
 
 })();
