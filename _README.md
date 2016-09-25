@@ -1,1 +1,1 @@
-# your-app-title
+# <%= slugifiedAppName %>
