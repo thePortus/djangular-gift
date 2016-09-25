@@ -2,9 +2,9 @@
   "name": "<%= slugifiedAppName %>",
   "private": true,
   "version": "0.0.1",
-  "description": "Open-source data sharing platform",
+  "description": "",
   "dependencies": {
-    "lodash": "^4.15.0",
+    "object-assign": "^4.1.0",
     "moment": "^2.14.1",
     "angular": "^1.5.8",
     "angular-animate": "^1.5.8",
@@ -39,3 +39,4 @@
     "angular-translate": "^2.12.0"
   }
 }
+
