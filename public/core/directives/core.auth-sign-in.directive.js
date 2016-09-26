@@ -9,9 +9,6 @@
         var directive = {
             templateUrl: staticPath('core/templates/core.auth-sign-in.template.html'),
             // variables to pass to directive controller
-            scope: {
-                auth: '='
-            },
             controller: authSignInController,
             controllerAs: 'vm',
             bindToController: true // b/c isolated scope
@@ -20,12 +17,12 @@
     }
 
     /* CONTROLLER FUNCTION */
-    function authSignInController(Authentication) {
+    function authSignInController($auth) {
         /* jshint validthis: true */
         var vm = this;
 
         /* PROPERTY & METHOD DEFINITIONS */
-        vm.auth = Authentication;
+        vm.auth = $auth;
 
         /* INITIALIZATION */
         vm.initialize = initialize;

@@ -1,25 +1,27 @@
+'use strict';
+
 (function() {
+    describe('HomeController', function() {
+        //Initialize global variables
+        var scope,
+            HomeController;
 
-    'use strict';
+        // Load the main application module
+        beforeEach(module(ApplicationConfiguration.name));
 
-    (function() {
-        describe('HomeController', function() {
-            //Initialize global variables
-            var scope,
-                HomeController;
+        beforeEach(inject(function($controller, $rootScope) {
+            scope = $rootScope.$new();
+            HomeController = $controller('HomeController', {
+                $scope: scope
+            });
 
-            // Load the main application module
-            beforeEach(module(ApplicationConfiguration.name));
+        }));
 
-            beforeEach(inject(homeControllerInject));
-
-            function homeControllerInject($controller, $rootScope) {
-                scope = $rootScope.$new();
-                HomeController = $controller('HomeController', {
-                    $scope: scope
-                });
-            }
+        describe('scope', function() {
+            it('should expose features catalogue', function() {
+                expect(HomeController.features).toBeDefined();
+            });
         });
-    })();
 
+    });
 })();

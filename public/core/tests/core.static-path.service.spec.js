@@ -1,24 +1,20 @@
+'use strict';
+
 (function() {
-    
-    'use strict';
+    describe('staticPath Service Spec', function() {
+        // Initialize global variables
+        var staticPath;
 
-    (function() {
-        describe('staticPath Service Spec', function() {
-            // Initialize global variables
-            var staticPath;
+        beforeEach(module(ApplicationConfiguration.name));
 
-            beforeEach(module(ApplicationConfiguration.name));
+        beforeEach(inject(function(_staticPath_) {
+            staticPath = _staticPath_;
 
-            beforeEach(inject(staticPathInject));
+            it('should be testable', inject(function() {
+                // The test logic
+                expect(staticPath).toBeDefined();
+            }));
 
-            function staticPathInject(_staticPath_) {
-                staticPath = _staticPath_;
-                it('should be testable', inject(function() {
-                    // The test logic
-                    expect(staticPath).toBeDefined();
-                }));
-            }
-        });
-    }());
-
-})();
+        }));
+    });
+}());

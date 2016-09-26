@@ -1,2 +1,1 @@
-
-from .index import IndexView
+# -*- coding: UTF-8 -*-

@@ -135,6 +135,8 @@ module.exports = function(grunt) {
         //        limit: 5
         //    }
         //},
+
+        /* grunt-karma configuration */
         karma: {
             options: {
                 frameworks: ['jasmine'],
@@ -162,10 +164,7 @@ module.exports = function(grunt) {
             },
             unit: {
                 options: {
-                    files: assets.lib.js
-                        .concat(assets.js)
-                        .concat(assets.tests)
-                        .concat(['public/*[!_]*/*[!tests]*/*.html'])
+                    files: assets.lib.js.concat(assets.js).concat(assets.tests).concat(assets.html)
                 }
             },
             min: {
@@ -174,6 +173,8 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        /* Server Configurations */
         'django-manage': {
             options: {
                 app: 'server',
