@@ -1,5 +1,5 @@
 {
-  "name": "usf-gift",
+  "name": "<%= slugifiedAppName %>",
   "private": true,
   "description": "",
   "version": "0.0.1",
@@ -37,7 +37,7 @@
     "karma-jasmine": "^1.0.2",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.2",
-    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.12",
     "jasmine": "^2.5.2",
     "jasmine-core": "^2.5.2",
     "grunt-karma": "^2.0.0"
