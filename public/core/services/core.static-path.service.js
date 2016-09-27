@@ -3,15 +3,19 @@
     'use strict';
 
     angular.module('core')
-        .factory('staticPath', function(staticRoot) {
+        .factory('staticPath', staticPathFactory)
+        .filter('staticPath', staticPathFilter);
+
+        function staticPathFactory(staticRoot) {
             return function(path) {
                 return (staticRoot || '/static/') + path;
             };
-        })
-        .filter('staticPath', function(staticPath) {
+        }
+
+        function staticPathFilter(staticPath) {
             return function(path) {
                 return staticPath(path);
             };
-        });
+        }
 
 })();

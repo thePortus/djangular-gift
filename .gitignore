@@ -1,7 +1,9 @@
 .DS_Store
+.git
 .nodemonignore
 .sass-cache/
 npm-debug.log
+pip-selfcheck.json
 
 # npm & bower modules
 node_modules/
@@ -28,10 +30,7 @@ tmp/
 *.log.*
 .coverage
 
+roles.retry
 public/i18n/*.js
-
-server/settings/*.yml  # used to store sensitive information
-
-# used during dev (same as _<fileName> but with interpolations)
-# package.json
-# bower.json
+server/settings/*.yml 
+share/

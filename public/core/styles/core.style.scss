@@ -1,27 +1,70 @@
-@import "../../_/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "variables",
 "misc",
 "header.view",
-"flash",
-"password-strength.template",
-"dropdown",
-"feature-item"
-,
-        "feature-item.template"/* leave me here */
+"feature-category",
+"feature-category.template",
+"auth-sign-in.template"
+/* leave me here */
 
 ;
 
 /* Defaults */
+
 html {
-    font-family: "TypoPRO Roboto";
+    font-family: "TypoPRO Fira Sans";
 }
 
 body {
-    padding-top: 50px;
+    height: 100%;
+    width: 100%;
 }
 
+
 /* For page/panel titles */
+
 .title-font {
-    font-family: "TypoPRO Aleo";
+    font-family: "TypoPRO Merriweather";
     font-weight: bold;
 }
+
+.title-main {
+    font-size: 3em;
+    font-variant: small-caps;
+}
+
+.text-center {
+    text-align: center;
+}
+
+a:link {
+    color: #AA2F08;
+}
+
+a:visited {
+    color: #AA2F08;
+}
+
+a:hover {
+    color: #EDAC98;
+}
+
+a:active {
+    color: #EDAC98;
+}
+
+.default-dark a:link {
+    color: #FFE0D4;
+}
+
+.default-dark a:visited {
+    color: #FFE0D4;
+}
+
+.default-dark a:hover {
+    color: #FFE0D4;
+}
+
+.default-dark a:active {
+    color: #FFE0D4;
+}
+
