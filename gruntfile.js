@@ -9,6 +9,7 @@ module.exports = function(grunt) {
         'ngtemplates': 'grunt-angular-templates',
         'translate': 'grunt-djangularjs-translate'
     });
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
@@ -112,7 +113,7 @@ module.exports = function(grunt) {
                 map: true, // inline sourcemaps
                 processors: [
                     require('pixrem')(), // add fallbacks for rem units
-                    require('autoprefixer-core')({ browsers: 'last 2 versions' }), // add vendor prefixes
+                    require('autoprefixer')({ browsers: 'last 2 versions' }), // add vendor prefixes
                     require('cssnano')() // minify the result
                 ]
             },
@@ -134,9 +135,11 @@ module.exports = function(grunt) {
         //        limit: 5
         //    }
         //},
+
+        /* grunt-karma configuration */
         karma: {
             options: {
-                frameworks: ['jasmine-jquery', 'jasmine'],
+                frameworks: ['jasmine'],
                 reporters: ['progress'],
                 port: 9876,
                 colors: true,
@@ -148,7 +151,6 @@ module.exports = function(grunt) {
                 plugins: [
                     'karma-phantomjs-launcher',
                     'karma-jasmine',
-                    'karma-jasmine-jquery',
                     'karma-ng-html2js-preprocessor'
                 ],
                 preprocessors: {
@@ -162,10 +164,7 @@ module.exports = function(grunt) {
             },
             unit: {
                 options: {
-                    files: assets.lib.js
-                        .concat(assets.js)
-                        .concat(assets.tests)
-                        .concat(['public/*[!_]*/*[!tests]*/*.html'])
+                    files: assets.lib.js.concat(assets.js).concat(assets.tests).concat(assets.html)
                 }
             },
             min: {
@@ -174,6 +173,8 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        /* Server Configurations */
         'django-manage': {
             options: {
                 app: 'server',

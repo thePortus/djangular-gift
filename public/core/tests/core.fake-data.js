@@ -6,7 +6,7 @@
 angular.module('core')
     .constant('staticRoot', '/static/')
     .value('coreFakeData', {
-        users: [{
+        users:  [{
             username: 'user0',
             isLoggedUser: true
         }, {
@@ -14,6 +14,6 @@ angular.module('core')
             isLoggedUser: false
         }]
     })
-    .run(function($auth, coreFakeData) {
+    .run(function ($auth, coreFakeData) {
         $auth.setLoggedUser(coreFakeData.users[0]);
     });

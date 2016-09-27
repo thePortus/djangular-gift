@@ -14,6 +14,14 @@
             HomeController = $controller('HomeController', {
                 $scope: scope
             });
+
         }));
+
+        describe('scope', function() {
+            it('should expose features catalogue', function() {
+                expect(HomeController.features).toBeDefined();
+            });
+        });
+
     });
 })();

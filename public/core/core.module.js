@@ -1,10 +1,13 @@
 (function() {
 
-'use strict';
+    'use strict';
 
-ApplicationConfiguration.registerModule('core');
-angular.module('core')
-    .config(function(staticRoot, $stateProvider) {
+    ApplicationConfiguration.registerModule('core');
+    angular.module('core')
+        .config(appConfig)
+        .run(runApp);
+
+    function appConfig(staticRoot, $stateProvider) {
         /**
          * PROJECT ROUTES
          *
@@ -15,6 +18,7 @@ angular.module('core')
         var staticPath = function(path) {
             return staticRoot + path;
         };
+
         $stateProvider
             .state('home', { // main page once logged in
                 url: '/',
@@ -22,29 +26,16 @@ angular.module('core')
                 controller: 'HomeController as vm',
                 resolve: {}
             })
-            .state('signin', {
-                url: '/signin',
-                templateUrl: staticPath('auth/views/auth.signin.view.html'),
-                controller: 'SigninController as vm',
-                resolve: {
-                    // Optional: inject stuffs into SigninController from here
-                }
-            })
-            .state('signup', {
-                url: '/signup',
-                templateUrl: staticPath('auth/views/auth.signup.view.html'),
-                controller: 'SignupController as vm',
-                resolve: {
-                    // Optional: inject stuffs into SignupController from here
-                }
-            })
             /* leave me here */
         ;
-    })
-    .run(function($rootScope, $log, format) {
-        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+    }
+
+    function runApp($rootScope, $log, format) {
+        $rootScope.$on('$stateChangeError', stateChangeError);
+
+        function stateChangeError(event, toState, toParams, fromState, fromParams, error) {
             $log.warn(format('Cannot navigate from {} to {}.\nError: {}', fromState.url, toState.url, error));
-        });
-    });
+        }
+    }
 
 })();

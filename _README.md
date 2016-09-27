@@ -1,1 +1,1 @@
-# usf-gift
+# <%= slugifiedAppName %>

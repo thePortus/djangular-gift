@@ -9,11 +9,12 @@
 
         beforeEach(inject(function(_staticPath_) {
             staticPath = _staticPath_;
-        }));
 
-        it('should be testable', inject(function() {
-            // The test logic
-            expect(staticPath).toBeDefined();
+            it('should be testable', inject(function() {
+                // The test logic
+                expect(staticPath).toBeDefined();
+            }));
+
         }));
     });
 }());

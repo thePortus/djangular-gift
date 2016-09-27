@@ -2,20 +2,19 @@
     "staticUrl": "/static/",
     "lib": {
         "css": [
+            "public/_/typopro-web/web/TypoPRO-Merriweather/TypoPRO-Merriweather.css",
+            "public/_/typopro-web/web/TypoPRO-FiraSans/TypoPRO-FiraSans.css",
             "public/_/angular-loading-bar/build/loading-bar.min.css",
             "public/_/angular-material/angular-material.min.css",
-            "public/_/typopro-web/web/TypoPRO-Aleo/TypoPRO-Aleo-Bold.css",
-            "public/_/typopro-web/web/TypoPRO-Roboto/TypoPRO-Roboto-Bold.css",
-            "public/_/material-design-icons/iconfont/material-icons.css"
+            "public/_/material-design-icons-iconfont/dist/material-design-icons.css"
         ],
         "js": [
             "public/_/lodash/lodash.min.js",
             "public/_/moment/min/moment.min.js",
             "public/_/messageformat/messageformat.js",
-            "public/_/messageformat/locale/*.js",
             "public/_/angular/angular.min.js",
+            "public/_/angular-aria/angular-aria.min.js",
             "public/_/angular-animate/angular-animate.min.js",
-            "public/_/angular-bootstrap/ui-bootstrap-tpls.min.js",
             "public/_/angular-cookies/angular-cookies.min.js",
             "public/_/angular-loading-bar/build/loading-bar.min.js",
             "public/_/angular-messages/angular-messages.min.js",
@@ -29,7 +28,6 @@
             "public/_/angular-ui-router/release/angular-ui-router.min.js",
             "public/_/angular-ui-router-title/angular-ui-router-title.js",
             "public/_/restangular/dist/restangular.min.js",
-            "public/_/angular-aria/angular-aria.min.js",
             "public/_/angular-material/angular-material.min.js"
         ]
     },
