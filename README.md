@@ -200,7 +200,7 @@ If everything has worked, run testing, build css, and start the server.
 When you run the last command, you will get a warning about a number of keys being obsolete. For now, you want to ignore this warning, so use the arrow keys and space bar to de-select every key. When you have finished, press 'enter' to finish.
 
 Now it is time to finally start the server.
-```
+```shell
 # Compile static files and start the server
 @dev0 $ grunt serve
 ```
@@ -275,24 +275,24 @@ This project is indebted to [Nicolas Panel](https://github.com/nicolaspanel), wh
 + Provisioning: Ansible
 + OS: Ubuntu/Trusty64
 + Backend:
-    * NodeJS
-    * Django
-    * Django Rest Framework
-    * Django Compressor
-    * Django Rest Pandas
+	* NodeJS
+	* Django
+	* Django Rest Framework
+	* Django Compressor
+	* Django Rest Pandas
 + Frontend:
-    * AngularJS
-    * Angular-Material
-    * Material Design Icons
-    * Angular-Translate
-    * Angular-Aria
-    * Sass
-    * Moment.js
+	* AngularJS
+	* Angular-Material
+	* Material Design Icons
+	* Angular-Translate
+	* Angular-Aria
+	* Sass
+	* Moment.js
 + Scaffolding/Automation/Testing:
-    * Yeoman
-    * Grunt
-    * Karma
-    * Protractor
+	* Yeoman
+	* Grunt
+	* Karma
+	* Protractor
 
 ---
 

@@ -35,7 +35,7 @@
     "OAUTH_DESCRIPTION": "3rd-Party Google OAuth implementation by <b>django-allauth</b>",
     "OAUTH_ARIA_LABEL": "Visit the django-allauth website.",
     "GRUNT_DESCRIPTION": "The JavaScript Task Runner",
-    "GRUNTARIA_LABEL": "Visit the Grunt Website",
+    "GRUNT_ARIA_LABEL": "Visit the Grunt Website",
     "YO_DESCRIPTION": "The web's scaffolding tool for modern webapps",
     "YO_ARIA_LABEL": "Visit the Yeoman Website",
     "KARMA_DESCRIPTION": "Spectacular Test Runner for Javascript",
